@@ -1,5 +1,5 @@
 = AsciiDoc Intro
-Zhuang Ma <mzlogin@qq.com>
+Zhuang Ma <chumpma@gmail.com>
 v1.0, 2019-11-19
 :toc: left
 :imagesdir: assets/
@@ -62,3 +62,4 @@ public static class main {
 == 官方文档
 
 - https://asciidoctor.org/docs/asciidoc-syntax-quick-reference[AsciiDoc Syntax Quick Reference]
+- https://asciidoctor.org/docs/user-manual[Asciidoctor User Manual]
