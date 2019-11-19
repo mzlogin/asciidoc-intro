@@ -1,0 +1,64 @@
+= AsciiDoc Intro
+Zhuang Ma <mzlogin@qq.com>
+v1.0, 2019-11-19
+:toc: left
+:imagesdir: assets/
+:homepage: https://mazhuang.org
+:icons: font
+:source-highlighter: coderay
+
+== 常见用法
+
+=== 文本格式
+
+[quote, mzlogin]
+____
+这是一段引用。
+____
+
+*粗体*
+
+_斜体_
+
+=== 超链接
+
+https://mazhuang.org[码志]
+
+=== 图片
+
+image::https://mazhuang.org/favicon.ico[]
+
+=== ICON
+
+默认不会展示 ICON，需要 `:icons: font` 开启，支持 NOTE、CAUTION、WARNING、IMPORTANT、TIP。
+
+NOTE: 注意
+
+CAUTION: 小心
+
+WARNING: 警惕
+
+IMPORTANT: 重要
+
+TIP: 提示
+
+=== 代码块
+
+[source, java]
+----
+public static class main {
+
+}
+----
+
+=== 表格
+
+|===
+|表头1|表头2
+
+|content1|content2
+|===
+
+== 官方文档
+
+- https://asciidoctor.org/docs/asciidoc-syntax-quick-reference[AsciiDoc Syntax Quick Reference]
