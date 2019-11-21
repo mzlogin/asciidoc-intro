@@ -1,36 +1,165 @@
 = AsciiDoc Intro
-Zhuang Ma <chumpma@gmail.com>
-v1.0, 2019-11-19
+Zhuang Ma <https://github.com/mzlogin[@mzlogin]>
 :toc: left
 :imagesdir: assets/
 :homepage: https://mazhuang.org
 :icons: font
 :source-highlighter: coderay
 
-== 常见用法
+查看在线文档，效果更佳： https://mazhuang.org/asciidoc-intro/README.html[]
 
-=== 文本格式
+== 语法
 
+=== 标题
+
+.AsciiDoc
+----
+= 一级标题
+== 二级标题
+====== 六级标题
+----
+
+=== 段落
+
+中间没有空行的连续不断的几行文字被视为一个段落。
+
+.AsciiDoc
+----
+白日依山尽，
+
+黄河入海流。
+欲穷千里目，
+
+更上一层楼。
+----
+
+.预览效果
+白日依山尽，
+
+黄河入海流。
+欲穷千里目，
+
+更上一层楼。
+
+=== 行内格式
+
+对段落或部分文本的强调效果。
+
+.AsciiDoc
+----
+后面俩字加 *粗体*
+
+后面俩字加 _斜体_
+----
+
+.预览效果
+后面俩字加 *粗体*
+
+后面俩字加 _斜体_
+
+=== 引用
+
+.AsciiDoc
+----
+[quote, mzlogin]
+____
+这是一段引用。
+____
+----
+
+.预览效果
 [quote, mzlogin]
 ____
 这是一段引用。
 ____
 
-*粗体*
-
-_斜体_
-
 === 超链接
 
+.AsciiDoc
+----
+https://mazhuang.org[码志]
+----
+
+.预览效果
 https://mazhuang.org[码志]
 
 === 图片
 
-image::https://mazhuang.org/favicon.ico[]
+.AsciiDoc
+----
+image::https://mazhuang.org/assets/images/qrcode.jpg[闷骚的程序员]
+----
 
-=== ICON
+image::https://mazhuang.org/assets/images/qrcode.jpg[闷骚的程序员]
 
-默认不会展示 ICON，需要 `:icons: font` 开启，支持 NOTE、CAUTION、WARNING、IMPORTANT、TIP。
+=== 列表
+
+.AsciiDoc
+----
+.无序列表
+* level 1
+** level 2
+*** level 3
+* level 1
+
+.有序列表
+. level 1
+.. level 2
+... level 3
+. level 1
+----
+
+.预览效果
+.无序列表
+* level 1
+** level 2
+*** level 3
+* level 1
+
+.有序列表
+. level 1
+.. level 2
+... level 3
+. level 1
+
+=== 代码块
+
+.AsciiDoc
+....
+[source, java]
+----
+if (TextUtils.isEmpty(text)) { // <1>
+    return null;
+}
+----
+<1> 判断 text 是否为空
+....
+
+.预览效果
+[source, java]
+----
+if (TextUtils.isEmpty(text)) { // <1>
+    return null;
+}
+----
+<1> 判断 text 是否为空
+
+=== 醒目
+
+默认不会展示醒目 ICON，需要 `:icons: font` 开启，支持 NOTE、CAUTION、WARNING、IMPORTANT、TIP。
+
+.AsciiDoc
+----
+NOTE: 注意
+
+CAUTION: 小心
+
+WARNING: 警惕
+
+IMPORTANT: 重要
+
+TIP: 提示
+----
 
 NOTE: 注意
 
@@ -42,17 +171,18 @@ IMPORTANT: 重要
 
 TIP: 提示
 
-=== 代码块
-
-[source, java]
-----
-public static class main {
-
-}
-----
-
 === 表格
 
+.AsciiDoc
+----
+|===
+|表头1|表头2
+
+|content1|content2
+|===
+----
+
+.预览效果
 |===
 |表头1|表头2
 

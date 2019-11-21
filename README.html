@@ -443,20 +443,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>AsciiDoc Intro</h1>
 <div class="details">
 <span id="author" class="author">Zhuang Ma</span><br>
-<span id="email" class="email"><a href="mailto:chumpma@gmail.com">chumpma@gmail.com</a></span><br>
-<span id="revnumber">version 1.0,</span>
-<span id="revdate">2019-11-19</span>
+<span id="email" class="email"><a href="https://github.com/mzlogin">@mzlogin</a></span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_常见用法">常见用法</a>
+<li><a href="#_语法">语法</a>
 <ul class="sectlevel2">
-<li><a href="#_文本格式">文本格式</a></li>
+<li><a href="#_标题">标题</a></li>
+<li><a href="#_段落">段落</a></li>
+<li><a href="#_行内格式">行内格式</a></li>
+<li><a href="#_引用">引用</a></li>
 <li><a href="#_超链接">超链接</a></li>
 <li><a href="#_图片">图片</a></li>
-<li><a href="#_icon">ICON</a></li>
+<li><a href="#_列表">列表</a></li>
 <li><a href="#_代码块">代码块</a></li>
+<li><a href="#_醒目">醒目</a></li>
 <li><a href="#_表格">表格</a></li>
 </ul>
 </li>
@@ -465,12 +467,89 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>查看在线文档，效果更佳： <a href="https://mazhuang.org/asciidoc-intro/README.html" class="bare">https://mazhuang.org/asciidoc-intro/README.html</a></p>
+</div>
+</div>
+</div>
 <div class="sect1">
-<h2 id="_常见用法">常见用法</h2>
+<h2 id="_语法">语法</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_文本格式">文本格式</h3>
+<h3 id="_标题">标题</h3>
+<div class="listingblock">
+<div class="title">AsciiDoc</div>
+<div class="content">
+<pre>= 一级标题
+== 二级标题
+====== 六级标题</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_段落">段落</h3>
+<div class="paragraph">
+<p>中间没有空行的连续不断的几行文字被视为一个段落。</p>
+</div>
+<div class="listingblock">
+<div class="title">AsciiDoc</div>
+<div class="content">
+<pre>白日依山尽，
+
+黄河入海流。
+欲穷千里目，
+
+更上一层楼。</pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="title">预览效果</div>
+<p>白日依山尽，</p>
+</div>
+<div class="paragraph">
+<p>黄河入海流。
+欲穷千里目，</p>
+</div>
+<div class="paragraph">
+<p>更上一层楼。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_行内格式">行内格式</h3>
+<div class="paragraph">
+<p>对段落或部分文本的强调效果。</p>
+</div>
+<div class="listingblock">
+<div class="title">AsciiDoc</div>
+<div class="content">
+<pre>后面俩字加 *粗体*
+
+后面俩字加 _斜体_</pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="title">预览效果</div>
+<p>后面俩字加 <strong>粗体</strong></p>
+</div>
+<div class="paragraph">
+<p>后面俩字加 <em>斜体</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_引用">引用</h3>
+<div class="listingblock">
+<div class="title">AsciiDoc</div>
+<div class="content">
+<pre>[quote, mzlogin]
+____
+这是一段引用。
+____</pre>
+</div>
+</div>
 <div class="quoteblock">
+<div class="title">预览效果</div>
 <blockquote>
 <div class="paragraph">
 <p>这是一段引用。</p>
@@ -480,31 +559,152 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 &#8212; mzlogin
 </div>
 </div>
-<div class="paragraph">
-<p><strong>粗体</strong></p>
-</div>
-<div class="paragraph">
-<p><em>斜体</em></p>
-</div>
 </div>
 <div class="sect2">
 <h3 id="_超链接">超链接</h3>
+<div class="listingblock">
+<div class="title">AsciiDoc</div>
+<div class="content">
+<pre>https://mazhuang.org[码志]</pre>
+</div>
+</div>
 <div class="paragraph">
+<div class="title">预览效果</div>
 <p><a href="https://mazhuang.org">码志</a></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_图片">图片</h3>
+<div class="listingblock">
+<div class="title">AsciiDoc</div>
+<div class="content">
+<pre>image::https://mazhuang.org/assets/images/qrcode.jpg[闷骚的程序员]</pre>
+</div>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="https://mazhuang.org/favicon.ico" alt="favicon">
+<img src="https://mazhuang.org/assets/images/qrcode.jpg" alt="闷骚的程序员">
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_icon">ICON</h3>
+<h3 id="_列表">列表</h3>
+<div class="listingblock">
+<div class="title">AsciiDoc</div>
+<div class="content">
+<pre>.无序列表
+* level 1
+** level 2
+*** level 3
+* level 1
+
+.有序列表
+. level 1
+.. level 2
+... level 3
+. level 1</pre>
+</div>
+</div>
+<div class="ulist">
+<div class="title">无序列表</div>
+<ul>
+<li>
+<p>level 1</p>
+<div class="ulist">
+<ul>
+<li>
+<p>level 2</p>
+<div class="ulist">
+<ul>
+<li>
+<p>level 3</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>level 1</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">有序列表</div>
+<ol class="arabic">
+<li>
+<p>level 1</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>level 2</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>level 3</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>level 1</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_代码块">代码块</h3>
+<div class="literalblock">
+<div class="title">AsciiDoc</div>
+<div class="content">
+<pre>[source, java]
+----
+if (TextUtils.isEmpty(text)) { <i class="conum" data-value="1"></i><b>(1)</b>
+    return null;
+}
+----
+&lt;1&gt; 判断 text 是否为空</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">预览效果</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">if</span> (TextUtils.isEmpty(text)) { <i class="conum" data-value="1"></i><b>(1)</b>
+    <span class="keyword">return</span> <span class="predefined-constant">null</span>;
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>判断 text 是否为空</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_醒目">醒目</h3>
 <div class="paragraph">
-<p>默认不会展示 ICON，需要 <code>:icons: font</code> 开启，支持 NOTE、CAUTION、WARNING、IMPORTANT、TIP。</p>
+<p>默认不会展示醒目 ICON，需要 <code>:icons: font</code> 开启，支持 NOTE、CAUTION、WARNING、IMPORTANT、TIP。</p>
+</div>
+<div class="listingblock">
+<div class="title">AsciiDoc</div>
+<div class="content">
+<pre>NOTE: 注意
+
+CAUTION: 小心
+
+WARNING: 警惕
+
+IMPORTANT: 重要
+
+TIP: 提示</pre>
+</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -568,18 +768,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_代码块">代码块</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">class</span> <span class="class">main</span> {
-
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
 <h3 id="_表格">表格</h3>
+<div class="listingblock">
+<div class="title">AsciiDoc</div>
+<div class="content">
+<pre>|===
+|表头1|表头2
+
+|content1|content2
+|===</pre>
+</div>
+</div>
 <table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. 预览效果</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -618,8 +819,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.0<br>
-Last updated 2019-11-19 21:21:24
+Last updated 2019-11-21 14:20:31
 </div>
 </div>
 <style>
